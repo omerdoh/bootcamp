@@ -1,0 +1,47 @@
+#This program first asks for inputs from the user then determines and displays the rental costs associated with their inputs
+
+#Obtaining input from user
+
+customerName=input("Hello valued customer please write your name")
+customerCode=input("Now please write your rental code")
+daysRented=int(input("How many days have you rented your car")
+startOdometer=int(input("What was the vehicle's odometer reading at the beginning of the rental period"))
+endOdometer=int(input("What was the vehicle's odometer reading at the beginning of the rental period"))
+
+weeksRented = floor(daysRented/7) 
+distanceDriven=startOdometer-endOdometer
+
+#caculating costs 
+
+if (customerCode =="B" or customerCode =="b"):
+	baseCharge = 40
+	pricePerKM = 0.25
+
+elif (customerCode == "D" or customerCode == "d"): 
+	baseCharge = 60
+
+	if (startOdometer - endOdometer)/daysRented<=100:
+		pricePerKM = 0
+	elif (startOdometer - endOdometer)/daysRented>100: 
+		pricePerKM = 0.25
+
+elif (customerCode == "W" or customerCode == "w" 
+	baseCharge = 190 
+
+	if (startOdometer - endOdometer)/weeksRented <= 900: 
+		pricePerWeek = 0
+	elif ((startOdometer - endOdometer)/weeksRented > 900 and (startOdometer - endOdometer)/weeksRented <= 1500:
+		pricePerWeek = 50
+	else: 
+		pricePerWeek = 100 
+		pricePerKM = 0.25*(1500-(startOdometer-endOdometer))
+
+totalCharge = baseCharge + distanceDriven*pricePerKM + weeksRented*pricePerWeek
+	
+printf("Thank you", %s, for renting from us. Your Summary", customerName)  
+printf("Your", %s, "class car was rented for", %d, "days", customerCode, daysRented) 
+printf("Your car's odometer began at", %d, "and ended at", %d, startOdometer, endOdometer) 
+printf("You have driven", %d, kilometeres during this time, distanceDriven) 
+print("Your final bill for the period will be $", %d.ff, totalCharge) 
+
+ 
